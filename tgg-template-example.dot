@@ -3,40 +3,44 @@ digraph g
     node [ fixedsize = true, width = 2 ]; splines = line ; node [ style = filled ];
     
     /* grey box nodes */ node [ fillcolor = grey91, shape = box ];
-    /* ex: node_letter [ label = "label" ]; */
+    /* ex: n1 [ label = "label" ]; */
         a [ label = "package:Package" ];
         d [ label = "superclass:Class" ];
         h [ label = "schema:Schema" ];
         i [ label = "table:Table" ];
 
     /* grey hexagon nodes */ node [ shape = hexagon ];
-    /* ex: node_letter [ label = "label" ]; */
+    /* ex: n1 [ label = "label" ]; */
         e [ label = ":PackageToSchema" ];
         g [ label = ":ClassToTable" ];
 
     /* green box nodes */ node [ fillcolor = lawngreen, shape = box ];
-    /* ex: node_letter [ label = "label" ]; */
+    /* ex: n1 [ label = "label" ]; */
         b [ label = "subclass:Class" ];
         c [ label = "gen:Generalization" ];
 
     /* green hexagon nodes */ node [ shape = hexagon ];
-    /* ex: node_letter [ label = "label" ]; */
+    /* ex: n1 [ label = "label" ]; */
         f [ label = ":ClassToTable" ];
 
     /* enforce rows */
-    /* ex: { rank = same x y z } */
+    /* ex: { rank = same n1 n2 n3 } */
         { rank = same a e h }
         { rank = same g d i }
         { rank = same f b }
    
     /* black edges */ edge [ color = black ];
+    /* ex: n1 -> n2 ; */
+    /* ex: n1 -> n2 [ label = "label", dir = back ]; */
         h -> i [ label = ":table" ];
         a -> e [ dir = back ] ;
         e -> h ;
         d -> g [ dir = back ] ;
         g -> i ;
    
-    /* green ++ edges */ edge[ color = green3, label = <<font color="green3">++</font>>, labeldistance = 1 ];
+    /* green ++ edges */ edge [ color = green3, label = < <font color = "green3"> ++ </font> >, labeldistance = 1 ];
+    /* ex: n1 -> n2 ; */
+    /* ex: n1 -> n2 [ taillabel = "label", dir = back ]; */
         a -> b [ taillabel = ":packagableElement" ]; 
         b -> c [ taillabel = ":generalization" ];
         c -> d [ taillabel = ":general" ];
