@@ -1,5 +1,6 @@
 digraph d2 
 {
+    graph [ dpi = 150 ]; 
     node [ fixedsize = true, width = 2 ]; splines = line ; node [ style = filled ];
     
     /* grey box nodes */ node [ fillcolor = grey91, shape = box ];
