@@ -4,8 +4,13 @@ An alright template for representing triple graph grammars in the Graphviz DOT l
 
 ## Example image
 
-![Triple graph grammar template example](tgg-template-example.png)
+Example graphs are based on graphs from [this animation](https://commons.wikimedia.org/wiki/File:TGG_Classes2Tables_Transformation_Process_anim_(en).gif).
 
-## Making the image
+![Triple graph grammar template example 1](tgg-template-example-1.png)
 
-     $ dot -Tpng tgg-template-example.dot > tgg-template-example.png
+![Triple graph grammar template example 2](tgg-template-example-2.png)
+
+### Making the images
+
+     $ dot -Tpng tgg-template-example-1.dot > tgg-template-example-1.png
+     $ dot -Tpng tgg-template-example-2.dot > tgg-template-example-2.png
