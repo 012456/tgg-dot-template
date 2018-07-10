@@ -1,0 +1,35 @@
+digraph d2 
+{
+    graph [ dpi = 150 ]; 
+    node [ fixedsize = true, width = 2 ]; splines = line ; node [ style = filled ];
+    
+    /* grey box nodes */ node [ fillcolor = grey91, shape = box ];
+    /* ex: n1 [ label = "label" ]; */
+        // insert here
+
+    /* grey hexagon nodes */ node [ shape = hexagon ];
+    /* ex: n1 [ label = "label" ]; */
+        // insert here
+
+    /* green box nodes */ node [ fillcolor = lawngreen, shape = box ];
+    /* ex: n1 [ label = "label" ]; */
+        // insert here
+
+    /* green hexagon nodes */ node [ shape = hexagon ];
+    /* ex: n1 [ label = "label" ]; */
+        // insert here
+
+    /* enforce rows */
+    /* ex: { rank = same n1 n2 n3 } */
+        // insert here
+   
+    /* black edges from column */ edge [ color = black ];
+    /* ex: n1 -> n2 ; */
+    /* ex: n1 -> n2 [ label = "label", dir = back ]; */
+        // insert here
+   
+    /* green ++ edges */ edge [ color = green3, label = <<font color="green3">++</font>>, labeldistance = 1 ];
+    /* ex: n1 -> n2 ; */
+    /* ex: n1 -> n2 [ taillabel = "label", dir = back ]; */
+        // insert here
+}
