@@ -1,24 +1,21 @@
 digraph d2 
 {
-    graph [ dpi = 100 ]; 
+    graph [ dpi = 200 ]; 
     node [ fixedsize = true, width = 2 ]; splines = line ; node [ style = filled ];
     
     /* grey box nodes */ node [ fillcolor = grey91, shape = box ];
     /* ex: n1 [ label = "label" ]; */
         a1 [ label = "package:Package" ];
         a3 [ label = "schema:Schema" ];
-        d1 [ label = "superclass:Class" ];
-        d3 [ label = "table:Table" ];
 
     /* grey hexagon nodes */ node [ shape = hexagon ];
     /* ex: n1 [ label = "label" ]; */
         a2 [ label = ":PackageToSchema" ];
-        d2 [ label = ":ClassToTable" ];
 
     /* green box nodes */ node [ fillcolor = lawngreen, shape = box ];
     /* ex: n1 [ label = "label" ]; */
-        b1 [ label = "subclass:Class" ];
-        c1 [ label = "gen:Generalization" ];
+        b1 [ label = "class:Class" ];
+        b3 [ label = "table:Table" ];
 
     /* green hexagon nodes */ node [ shape = hexagon ];
     /* ex: n1 [ label = "label" ]; */
@@ -26,31 +23,27 @@ digraph d2
 
     /* red box nodes */ node [ fillcolor = crimson, shape = box ];
     /* ex: n1 [ label = "label" ]; */
+        c1 [ label = "gen:Generalization" ];
 
     /* enforce rows */
     /* ex: { rank = same n1 n2 n3 } */
         { rank = same a1 a2 a3 }
-        { rank = same b1 b2 }
+        { rank = same b1 b2 b3 }
         { rank = same c1 }
-        { rank = same d2 d1 d3 }
    
     /* black edges from column */ edge [ color = black ];
     /* ex: n1 -> n2 ; */
     /* ex: n1 -> n2 [ label = "label", dir = back ]; */
         a1 -> a2 [ dir = back ] ;
         a2 -> a3 ;
-        d1 -> d2 [ dir = back ] ;
-        d2 -> d3 ;
-        a3 -> d3 [ label = ":table" ];
    
     /* green ++ edges */ edge [ color = green3, label = <<font color="green3">++</font>>, labeldistance = 1 ];
     /* ex: n1 -> n2 ; */
     /* ex: n1 -> n2 [ taillabel = "label", dir = back ]; */
         a2 -> b2 ;
         b1 -> b2 [ dir = back ]; 
-        c1 -> b2 [ dir = back ]; 
-        b2 -> d3 ; 
+        b2 -> b3 ; 
         a1 -> b1 [ taillabel = ":packagableElement" ]; 
         b1 -> c1 [ taillabel = ":generalization" ];
-        c1 -> d1 [ taillabel = ":general" ];
+        a3 -> b3 [ taillabel = ":table" ];
 }
